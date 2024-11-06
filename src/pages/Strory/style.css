@@ -1,0 +1,50 @@
+
+.story{
+margin-top: 12.5vh;
+padding: 2vh;
+background: #eae6e6;
+height: 84.5vh;
+}
+
+ .story_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    font-weight: 500;
+    background: #f6f4f4;
+    padding: 1px 1px 2px 1px ;
+    padding-left: 10px;
+    border-radius: 15px ;
+    color: rgb(69, 69, 69);
+ }
+.yourStory{
+    display: flex;
+    flex-direction: row;
+   
+   padding: 10px;
+   margin-bottom: 2vh;
+   background: white;
+   border-radius: 25px;
+}
+
+.story_content{
+    display: flex;
+    flex-direction: row;
+  
+    justify-content: space-between;
+   
+    margin-left: 1rem;
+    flex: 1;
+    border-left: 2px solid rgb(199, 133, 199) ;
+    padding-left: 10px;
+}
+
+.story-userName{
+    font-size: small ;
+    align-content: center;
+}
+
+.visible{
+    opacity: 0.5;
+}

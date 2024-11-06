@@ -1,0 +1,70 @@
+.profile_your{
+
+    height: 60vh;
+    width: 70vw;
+   
+ 
+    background: #a7a1a1;
+    border-radius: 15px;
+    border: 3px solid  rgb(94, 77, 194) ; /* Transparent border */
+
+ 
+}
+
+.div2{
+    position: fixed;
+    right: 0;
+    z-index: 98;
+ animation: myAnimation  0.25s ease-in-out;
+}
+@keyframes myAnimation {
+    0% {
+      right :-40vw;
+    }
+    15% {
+        right :-35vw;
+      }
+    25% {
+        right :-30vw;
+      }
+      35% {
+        right :-25vw;
+      }
+    50% {
+        right :-20vw;
+    }
+    64% {
+        right :-15vw;
+    }
+    75% {
+        right :-10vw;
+    }
+    85% {
+        right :-5vw;
+    }
+    100% {
+        right :0;
+    }
+  }
+
+  .message{
+    position: fixed;
+    top: 10vh;
+    animation: nimation  0.25s ease-in-out;
+
+  }
+
+  @keyframes nimation {
+   0%{
+    top:-5vh;
+   }
+50%{
+  top:5vh;
+}
+75%{
+ top: 7.5vh ;
+}
+   100%{
+    top:10h;
+   }
+  }
