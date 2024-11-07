@@ -8,7 +8,7 @@ import { context } from "./Context";
 import useGetUser_info from "./useGetUser_info";
 import useConversation from "./useconversation";
 import { useCookies } from "react-cookie";
-const SOCKET_SERVER_URL = "http://localhost:3001"; // Replace with your server URL
+const SOCKET_SERVER_URL = import.meta.env.VITE_BACKEND_URL; // Replace with your server URL
 
 const useVideoChat = (currentUser, targetUserId ) => {
    const {isCalling , setIsCalling} = useContext(context);
