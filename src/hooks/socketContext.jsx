@@ -25,7 +25,7 @@ export const SocketContextProvider =({children})=>{
     const socket = io(`${import.meta.env.VITE_BACKEND_URL}`  , {
         query :{
             userId : user
-        }});
+        }, withCredentials: true});
 
     setSocket(socket);
     // socket.on("connect", () => {
