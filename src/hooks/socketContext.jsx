@@ -22,7 +22,7 @@ export const SocketContextProvider =({children})=>{
        const user = sessionStorage.getItem('userID');
     
    if(cookies.access_token && user){
-    const socket = io(import.meta.env.VITE_BACKEND_URL  , {
+    const socket = io(`${import.meta.env.VITE_BACKEND_URL}`  , {
         query :{
             userId : user
         }});
