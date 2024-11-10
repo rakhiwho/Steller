@@ -28,7 +28,7 @@ function Register() {
       await axios.post( `${backendUrl}/user/register`, {
         userName,
         password,
-      });
+      } , withCredentials : true);
       setMessage(" registered successfully!!");
       setUserName("");
       setPassword("");
