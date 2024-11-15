@@ -13,6 +13,7 @@ function Searchres(conversations) {
   const { onlineUsers } = UseSocketContext();
   const isSelected = selectedConversation?._id === conversations._id;
   const is_online = onlineUsers.includes(conversations._id);
+  console.log(conversations)
   const pfp =
     conversations.profilePic ||
     "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg";
@@ -29,8 +30,8 @@ function Searchres(conversations) {
     <>
       <div
         className={`flex flex-row content-center  ${
-          isSelected ? "bg-indigo-100" : ""
-        } `}
+          isSelected ? "bg-indigo-100 text-indigo-950" : ""
+        } w-full `}
         onClick={handleClick}
       >
         <div className={`avatar ${is_online ? "online" : ""}`}>
@@ -38,10 +39,10 @@ function Searchres(conversations) {
             <img src={pfp} />
           </div>
         </div>
-        <p className="self-center">{conversations.userName}</p>
+       <p className="self-center">{conversations.userName}</p>
       </div>
 
-      <div className="divider m-0 "></div>
+      <div className="divider m-0 w-[100%] "></div>
     </>
   );
 }

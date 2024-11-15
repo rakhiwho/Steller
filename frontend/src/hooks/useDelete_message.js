@@ -10,7 +10,7 @@ function useDelete_message(messageID) {
     const  delete_message = async ()=>{
    
         try {
-            const res = await axios.delete(`http://localhost:3001/user/delete_message`, {
+            const res = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/user/delete_message`, {
                 headers,
                 params: { id: messageID },  // Correct way to send query parameters
                 withCredentials: true

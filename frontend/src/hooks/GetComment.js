@@ -13,7 +13,7 @@ import PostComment from './postComment';
 
        try {
    
-           const res = await axios.get(`http://localhost:3001/user/get_comment/${id}` , {
+           const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/get_comment/${id}` , {
                headers , 
                withCredentials:true
            });
@@ -21,8 +21,7 @@ import PostComment from './postComment';
            if(res.data){
               
                setData(res.data);
-               console.log(res.data)
-              
+               
            }else{
 
                console.log("something went wrong")

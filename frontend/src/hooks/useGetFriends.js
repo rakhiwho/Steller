@@ -15,7 +15,7 @@ function useGetFriends() {
     const get_friends = async ()=>{
         try {
             
-            const res = await axios.get('http://localhost:3001/user/getUsers' , {headers ,  withCredentials: true })
+            const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/getUsers` , {headers ,  withCredentials: true })
     
              setFriends(res.data);
              setFriend(res.data)

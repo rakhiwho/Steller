@@ -14,10 +14,10 @@ function useSendMessages(id) {
 
        
    try {
-    const res = await axios.post(`http://localhost:3001/user/send/${id}`, 
+    const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/send/${id}`, 
        {messages : message}, {   headers:{headers}, withCredentials: true});
       
-      console.log('Message sent successfully:', res.data);
+      
    // const data = await res.json();
    
    

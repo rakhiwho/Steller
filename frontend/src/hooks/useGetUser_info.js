@@ -13,7 +13,7 @@ function useGetUser_info() {
 
     const get_user = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/user/userProfile", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/userProfile`, {
           headers: { headers },
           withCredentials: true,
         });
@@ -23,7 +23,7 @@ function useGetUser_info() {
         }
 
         setData(res.data);
-        console.log(res.data);
+       
         setLoading(false);
       } catch (error) {
         console.log(error);

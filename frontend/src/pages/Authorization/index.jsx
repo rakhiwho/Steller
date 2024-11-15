@@ -5,7 +5,8 @@ import Login from "./login.jsx";
 import { context } from '../../hooks/Context.jsx';
 import NavBar from '../NavBar/index.jsx';
 import { useCookies } from 'react-cookie';
-
+ import Home from '../Home/index.jsx';
+import UserInfo from '../../hooks/UserInfo.js';
 
 
 
@@ -15,26 +16,15 @@ import { useCookies } from 'react-cookie';
 function Auth() {
  
   const [cookies] = useCookies(['access_token'])
-  const {registered  , logedIn} = useContext(context);
+  const { logedIn} = useContext(context);
+  const {data , loading} =  UserInfo(localStorage.getItem("userID"));
 
-
-
- if(!registered){
-
-    return(
-      <>
-    
-   {  !cookies || cookies.access_token ===null &&  <Register/>}
-      </>
-    )
-  }else if(registered) {
-    return(
-    <>
-    { !cookies ||  cookies.access_token===null &&<Login/>}
-    </>)
-  }
+return(<> 
+ { localStorage.getItem("userID") ==-1? <></>: <Login/> }
+</>)
  
-  return <NavBar/>
+ 
+   
 
 }
 

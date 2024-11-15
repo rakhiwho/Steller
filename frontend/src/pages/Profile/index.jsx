@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./style.css";
 import { context } from "../../hooks/Context";
 import useGetConversation from "../../hooks/useGetConversation";
@@ -41,7 +41,7 @@ function Index() {
     setCookies("access_token", null);
     console.log("deleted user success fully");
   };
-
+   
   return (
     <div
       className={`${!darkTheme ? "gradient" : ""} fixed w-full overflow-x-scroll  p-[3vh]  h-screen `}

@@ -16,7 +16,7 @@ function useChange_userInfo(userName, password, profilePic, gender, about) {
               if (about) formData.append('about', about);
               if (profilePic) formData.append('profilePic', profilePic); // Assuming profilePic is a File object
 
-              const res = await axios.put('http://localhost:3001/user/editProfile', formData, {
+              const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/user/editProfile`, formData, {
                   headers: {
                       ...headers,
                       'Content-Type': 'multipart/form-data',
@@ -24,7 +24,7 @@ function useChange_userInfo(userName, password, profilePic, gender, about) {
                   withCredentials: true
               });
 
-              console.log('Changed data successfully:', res.data);
+              
           } catch (error) {
               console.error('Error changing user info:', error);
           }

@@ -11,20 +11,19 @@ function UserInfo(id) {
   const { socket } = UseSocketContext();
   const [loading, setLoading] = useState(true);
  const {cookies  , } = useCookies(['access_token']);
+ 
   const getUserInfo = async () => {
     try {
-      const res =   await axios.get(`http://localhost:3001/user/userInfo/${id}`, {
+      const res =   await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/userInfo/${id}`, {
         headers,
         withCredentials: true,
       })
-      if (!res.data) {
-        return "data is null";
-      }
+   
 
       setData(res.data);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      
       setLoading(false);
     }
   };

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 
-const SOCKET_SERVER_URL = "http://localhost:3001"; // Replace with your server URL
+const SOCKET_SERVER_URL = import.meta.env.VITE_BACKEND_URL; // Replace with your server URL
 
 const useVoiceCallSystem = (currentUserId, targetUserId, isVideoCall = true) => {
   const [isvoiceCalling, setIsvoiceCalling] = useState(false);
@@ -26,7 +26,7 @@ const useVoiceCallSystem = (currentUserId, targetUserId, isVideoCall = true) => 
     });
    
     socketRef.current.on("connect", () => {
-      console.log("Socket connected:", socketRef.current.id);
+      
       setSocketConnected(true);
     });
 

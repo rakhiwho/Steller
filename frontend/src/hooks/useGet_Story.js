@@ -19,7 +19,7 @@ function useGet_Story(id) {
        
 
         try {
-            const res =  await axios.get(`http://localhost:3001/user/getStory/${id} ` , {headers , withCredentials: true});
+            const res =  await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/getStory/${id} ` , {headers , withCredentials: true});
   
             setStory(res.data)
 

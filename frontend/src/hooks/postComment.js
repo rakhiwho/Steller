@@ -10,8 +10,8 @@ function PostComment() {
     
     const AddComment = async (id , comment)=>{
         try {
-   const res = await axios.put(`http://localhost:3001/user/addComment/${id}` , {comments : comment} , {header , withCredentials:true} )
-   console.log(res.data)
+   const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/user/addComment/${id}` , {comments : comment} , {header , withCredentials:true} )
+  
    if(!res.data){
     console.log("something went wrong!")
    }

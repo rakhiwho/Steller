@@ -56,7 +56,7 @@ export const ContextProvider = ({ children }) => {
   useEffect(()=>{
     setAdvanced(false);
     setVisibleStory(false)
-    console.log("hello")
+  
   },[useNavigate ])
   
 const  defaultPfp= "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"

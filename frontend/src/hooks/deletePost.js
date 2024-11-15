@@ -8,7 +8,7 @@ function DeletePost() {
     
     try {
         
-        const res = await axios.delete(`http://localhost:3001/user/deletePost/${id}` , {
+        const res = await axios.delete(`${import.meta.env.VITE_BACKEND_URL }/user/deletePost/${id}` , {
             headers , withCredentials :true
         })
     

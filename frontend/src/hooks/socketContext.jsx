@@ -22,20 +22,20 @@ export const SocketContextProvider =({children})=>{
        const user = sessionStorage.getItem('userID');
     
    if(cookies.access_token && user){
-    const socket = io("http://localhost:3001"  , {
+    const socket = io(import.meta.env.VITE_BACKEND_URL  , {
         query :{
             userId : user
         }});
 
     setSocket(socket);
-    socket.on("connect", () => {
-        console.log("Connected to socket server" , socket.id);
-      });
+    // socket.on("connect", () => {
+    //     console.log("Connected to socket server" , socket.id);
+    //   });
      
       socket?.on('getOnlineUsers' , (users)=>{
         setOnlineUsers(users)
       })
-      console.log(onlineUsers)
+    //   console.log(onlineUsers)
  
 
 

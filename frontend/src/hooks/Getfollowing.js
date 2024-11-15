@@ -12,7 +12,7 @@ function Getfollowing(id) {
 
    try {
     
-       const res = await axios.get(`http://localhost:3001/user/getFollowingFollowers/${id}`, {headers , withCredentials :true})
+       const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/getFollowingFollowers/${id}`, {headers , withCredentials :true})
     
        if(res.data){
       setData(res.data);

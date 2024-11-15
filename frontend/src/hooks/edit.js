@@ -10,7 +10,7 @@ function EditPost() {
 
     try {
         
-        const res = await axios.put(`http://localhost:3001/user/edit/${id}` , {content}  , {headers , withCredentials : true} )
+        const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/user/edit/${id}` , {content}  , {headers , withCredentials : true} )
      
         if(res.data){
          setData(res.data)

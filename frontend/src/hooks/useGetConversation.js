@@ -18,15 +18,12 @@ function useGetConversation() {
             try{
 
                
-                const res = await axios.get(`http://localhost:3001/user/` , {   headers:{headers}, withCredentials: true});
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/` , {   headers:{headers}, withCredentials: true});
         
 
       //  const data = await res.json();
    
-        if(!res.data){
-          console.log("success , from use get conversation")
-        }
-      
+       
       setConversation(res.data)
       
       }catch(error){

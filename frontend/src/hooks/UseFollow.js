@@ -16,10 +16,7 @@ function UseFollow() {
   
 
       try {
-        const res = await axios.put(`http://localhost:3001/user/follow/${id}`, {} ,  {headers , withCredentials : true}  )
-        if(res.data){
-         console.log(res.data)
-        }
+        const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/user/follow/${id}`, {} ,  {headers , withCredentials : true}  )
         
       } catch (error) {
         console.log(error)

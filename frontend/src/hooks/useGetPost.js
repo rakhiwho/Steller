@@ -18,9 +18,9 @@ function UseGetPost(id) {
    
     const getPost = async ()=>{
         try {
-          const res =  await  axios.get( `http://localhost:3001/user/get_Post/${id}` , {   headers, withCredentials: true})
+          const res =  await  axios.get( `${import.meta.env.VITE_BACKEND_URL}/user/get_Post/${id}` , {   headers, withCredentials: true})
   
-          console.log(res)
+         
           if(!res.data){
              console.log("failed")
           }
@@ -45,7 +45,7 @@ function UseGetPost(id) {
                   console.log("something went wrong");
                   
                }
-               console.log(res.data)
+              
                setHomePost(res.data)
             } catch (error) {
                console.log(" client side error bwahhahaha >.<")

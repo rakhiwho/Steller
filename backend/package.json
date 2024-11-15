@@ -1,4 +1,4 @@
-{
+{  
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.4.0",
@@ -17,9 +17,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "node ./build/src/index.js",
     "dev": "nodemon ./src/index.js"
-  },
+   },
   "author": "",
   "license": "ISC",
   "description": ""

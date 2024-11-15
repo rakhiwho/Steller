@@ -11,7 +11,7 @@ const delete_user = async()=>{
 
     try {
         
-    const res = await  axios.delete('http://localhost:3001/user/delete_user' , {headers , withCredentials :true});
+    const res = await  axios.delete(`${import.meta.env.VITE_BACKEND_URL}/user/delete_user` , {headers , withCredentials :true});
 
     if(res.data){
         console.log("delete user sicccessfully yey !");
@@ -31,10 +31,7 @@ const delete_Story =  async()=>{
     try {
     const res = await  axios.delete(`http://localhost:3001/user/delete_Story/${userID}` , {headers , withCredentials :true});
 
-    if(res.data){
-        console.log("delete story sicccessfully yey !");
-
-    }
+   
 
     } catch (error) {
         console.log(error);

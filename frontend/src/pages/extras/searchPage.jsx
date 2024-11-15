@@ -23,17 +23,17 @@ function SearchPage() {
     <div
       className={` ${
         !darkTheme ? "bg-indigo-950 text-slate-300" : ""
-      } absolute m-0 left-[3.2vw]  h-screen  overflow-x-scroll lg:w-[96.5vw]  md:w-[95vw] w-[94.5vw] pl-6 py-0 user_post   `}
-      >
-      <div className="search ">
+      } absolute m-0 left-[3.2vw]  flex flex-col h-screen overflow-x-scroll  lg:w-[95.7vw]  md:w-[95vw] w-[94.5vw] pl-6 py-0 user_post   `}
+    >
+      <div className="h-fit">
         <form className="flex flex-row content-center pt-[2vh] ">
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="search"
             className={` ${
-        !darkTheme ? "bg-indigo-900 text-slate-300 border-none " : ""
-      } p-1 focus-visible:[ border-1px] border-r-0 rounded-r-none border-[1px] w-[50vw]`}
+              !darkTheme ? "bg-indigo-900 text-slate-300 border-none " : ""
+            } p-1 focus-visible:[ border-1px] border-r-0 rounded-r-none border-[1px] w-[50vw]`}
             type="text"
           />
           <button
@@ -44,22 +44,27 @@ function SearchPage() {
           </button>
         </form>
       </div>
-      <div className="divider w-[88vw] m-0 h-[1px] mt-2 " />
-      <div>
-      {search ? (
-        <div className="h-fit">
-          {results?.length != null &&
-            results.map((c) => (
-              <div key={c._id}>
-                <Searchres conversations={c} {...c} />
-              </div>
-            ))}
-        </div>
-      ) : (
-        <span className={`${!darkTheme?'text-slate-300':''} absolute top-[11vh] left-[6vw]`}>no user found...</span>
-      )}
+      <div className="divider m-0 w-[88vw] h-[1px] " />
+      <div className="flex content-start h-fit ">
+        {search ? (
+          <div className=" mt-2  w-[88vw] flex flex-col content-start">
+            {results?.length != null &&
+              results.map((c) => (
+                <div key={c._id}>
+                  <Searchres conversations={c} {...c} />
+                </div>
+              ))}
+          </div>
+        ) : (
+          <span
+            className={`${
+              !darkTheme ? "text-slate-300" : ""
+            } absolute top-[11vh] left-[6vw]`}
+          >
+            no user found...
+          </span>
+        )}
       </div>
-     
     </div>
   );
 }

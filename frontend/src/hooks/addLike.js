@@ -13,7 +13,7 @@ function AddLike(postID , commentID) {
 
     try {
         
-        const res =  await axios.put('http://localhost:3001/user/like' , 
+        const res =  await axios.put(import.meta.env.VITE_BACKEND_URL , 
            {
                postID :postID ,
                commentID :commentID

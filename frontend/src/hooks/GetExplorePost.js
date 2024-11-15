@@ -10,9 +10,8 @@ function GetExplorePost() {
    const {socket} = UseSocketContext();
     const getPost = async ()=>{
         try {
-            const res = await axios.get('http://localhost:3001/user/explorePosts' , { headers , withCredentials :true})
-
-            console.log(res)
+            const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/explorePosts` , { headers , withCredentials :true})
+ 
           if(!res.data){
              console.log("failed")
           }

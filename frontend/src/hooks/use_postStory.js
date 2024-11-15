@@ -9,7 +9,7 @@ function usePostStory(content, caption) {
     const add_Story = useCallback(async () => {
         try {
             const res = await axios.put(
-                'http://localhost:3001/user/add-story',
+                `${import.meta.env.VITE_BACKEND_URL}/user/add-story`,
                 { content, Story_discription: caption },
                 {
                     headers: {
@@ -18,10 +18,7 @@ function usePostStory(content, caption) {
                     withCredentials: true,
                 }
             );
-
-            if (res) {
-                console.log(res.data);
-            }
+ 
         } catch (error) {
             console.log(error);
         }

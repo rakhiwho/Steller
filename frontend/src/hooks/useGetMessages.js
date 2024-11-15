@@ -15,7 +15,7 @@ const {headers} = UseGetToken();
 
 
   try {
-      const res = await axios.get(`http://localhost:3001/user/get/${id}` ,{   headers:{headers}, withCredentials: true});
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/get/${id}` ,{   headers:{headers}, withCredentials: true});
 
      
     

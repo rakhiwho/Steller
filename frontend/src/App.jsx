@@ -2,7 +2,7 @@ import React , {useEffect} from 'react';
 
 
 import ContextProvider from './hooks/Context.jsx'
-import {BrowserRouter as  Router ,Routes , Route} from 'react-router-dom';
+import {BrowserRouter as  Router ,Routes , Route, useNavigate} from 'react-router-dom';
 import Home from './pages/Home/index.jsx';
 import Story from './pages/Strory/index.jsx';
 import Games from './pages/Home/games.jsx';
@@ -21,55 +21,75 @@ import UserInfo from './hooks/UserInfo.js';
 import SearchPage from './pages/extras/searchPage.jsx';
 import VideoPage from './pages/extras/callComponents/videoPage.jsx';
 import { useCookies } from 'react-cookie';
+import Login from './pages/Authorization/login.jsx';
+import Register from './pages/Authorization/register.jsx';
 
 
 
 
 function App() {
  
- const [cookies ,setCookies ] = useCookies(["access_token"]);
+  const [cookies, ] = useCookies(["access_token"]);
   const {data , loading } = UserInfo(localStorage.getItem('lastChackedUser'))
   const {data : user , loading : userLoading} = UserInfo(localStorage.getItem('search_user'));
-   if(!cookies.access_token){
-    localStorage.clear();
-    setCookies('access_token' , null)
-   }
+    
+  if (window.innerWidth < 518) {
+     window.location.assign("/");
+   return (
+    <>
+       
+        <div className='centered-div ml-3 '>
+        🐠🐠🐠  Not Available Yet 🐠🐠🐠
+        </div>
+    </>
+   )
+  } else {
     return (
-        <>
-       <Router>
-        <ContextProvider>
-        <NavBar/>
-       <Routes>
-          <Route path="/" element={<Home/>}  >
-          <Route index element={<Post/>} />
+      <>
+     <Router>
+      <ContextProvider>
+      <NavBar/>
+     <Routes>
+     <Route path="/login" element={<Login/>}  />
+     <Route path="/register" element={<Register/>}  />
+      <Route path="/" element={<Home/>}  >
+
+        <Route index element={<Post/>} />
           <Route path='/explore'  > 
           <Route index element={<Explore/>} />
           <Route path='/explore/search' element={<SearchPage/>} />
-          </Route>
-          <Route path='/videoCall/:id' element={<VideoPage/>} />
-          <Route path='/add_post' element={<AddPost/>} />
-          <Route path='/games' element={<Games/>} />
-          <Route path='/more' element={<Additional/>} />
-          </Route>
-          <Route path="/chat" element={<Chat/>} > 
-          <Route index element={<ChatHome/>} />
-          <Route path='/chat/:id' element={<ChatHome/>} />
-          <Route path="/chat/profile/:id" element={loading ? <span>loading...</span> :< UserWholeInfo data={data} navigateTo="/chat" /> } />
-          </Route > 
-          <Route path="/story" element={<Story/>} />
-          <Route path="/profile" element={<Profile/> } />
-          <Route path="/userProfile/:id"  element={userLoading ? <span>loading...</span> :< UserWholeInfo data={user} navigateTo="/search" /> } />
+        </Route>
 
-        </Routes>
-          
-         
-          
-        </ContextProvider>
+      
+        <Route path='/videoCall/:id' element={<VideoPage/>} />
+        <Route path='/add_post' element={<AddPost/>} />
+        <Route path='/games' element={<Games/>} />
+        <Route path='/more' element={<Additional/>} />
+        </Route>
         
-       </Router>
+        <Route path="/chat" element={<Chat/>} > 
+        <Route index element={<ChatHome/>} />
+        <Route path='/chat/:id' element={<ChatHome/>} />
+        <Route path="/chat/profile/:id" element={loading ? <span>loading...</span> :< UserWholeInfo data={data} navigateTo="/chat" /> } />
+        </Route > 
+        <Route path="/story" element={<Story/>} />
+        <Route path="/profile" element={<Profile/> } />
+        <Route path="/userProfile/:id"  element={userLoading ? <span>loading...</span> :< UserWholeInfo data={user} navigateTo="/search" /> } />
+
+      </Routes>
         
-  </>
-)}
+       
+        
+      </ContextProvider>
+      
+     </Router>
+      
+</>
+)
+  }
+ 
+   
+  }
 
          
 
