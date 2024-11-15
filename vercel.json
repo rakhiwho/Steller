@@ -19,7 +19,7 @@
       "dest": "frontend/dist/$1"  // Serve the frontend build from the dist folder
     },
     {
-      "src": "/api/(.*)",  // Backend API routes will go to the serverless function
+      "src": "/(.*)",  // Backend API routes will go to the serverless function
       "dest": "backend/src/index.js"
     }
   ]
