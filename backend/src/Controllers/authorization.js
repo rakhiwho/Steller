@@ -10,7 +10,7 @@ export const verifyToken = async (req, res, next) => {
     if (!token) {
       return res.status(401).json({ error: "missing token" });
     }
-    const decoded = jwt.verify(token, 'secret');
+    const decoded = jwt.verify(token, process.env.SECRET);
 
     if (!decoded) {
       return res.status(401).json({ error: "unauthorized , invalid" });
