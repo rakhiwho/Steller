@@ -20,10 +20,7 @@ app.use(cookieParser())
 
  
 
-mongoose.connect(process.env.MONGO_DB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_DB_URL )
 .then(() => console.log('Connected to MongoDB successfully'))
 .catch((err) => console.error('Error connecting to MongoDB:', err));
 
