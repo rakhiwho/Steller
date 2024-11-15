@@ -18,9 +18,9 @@ const emitter = new EventEmitter();
 app.use(express.json());
 app.use(cookieParser())
 
-console.log("MongoDB URL:", process.env.MONGO_DB_URL);
+ 
 
-mongoose.connect("mongodb+srv://rakhydubey4:pokie888@chatapp.n25eckq.mongodb.net/chatApp")
+mongoose.connect(process.env.MONGO_DB_URL)
 .then(() => console.log('Connected to MongoDB successfully'))
 .catch((err) => console.error('Error connecting to MongoDB:', err));
 
