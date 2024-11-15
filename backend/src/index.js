@@ -28,4 +28,4 @@ app.use('/user' , authRouter);
 app.get("*" , (req, res)=>{
   res.sendFile(path.join(__dirname  ,"frontend" , "dist" , "index.html"))
 })
-// server.listen(3001 , ()=> console.log("server Start! "));
+ server.listen(3001 , ()=> console.log("server Start! "));
