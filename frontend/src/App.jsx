@@ -33,17 +33,7 @@ function App() {
   const {data , loading } = UserInfo(localStorage.getItem('lastChackedUser'))
   const {data : user , loading : userLoading} = UserInfo(localStorage.getItem('search_user'));
     
-  if (window.innerWidth < 518) {
-     window.location.assign("/");
-   return (
-    <>
-       
-        <div className='centered-div ml-3 '>
-        🐠🐠🐠  Not Available Yet 🐠🐠🐠
-        </div>
-    </>
-   )
-  } else {
+ 
     return (
       <>
      <Router>
@@ -86,7 +76,7 @@ function App() {
       
 </>
 )
-  }
+  
  
    
   }
