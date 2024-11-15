@@ -71,7 +71,7 @@ export const login = async (req, res) => {
       return res.status(401).json({ type: UserError.WRONG_CREDENIALS });
     } 
  
-    const token = jwt.sign({ userID: user._id }, 'secret' , { expiresIn: "1h" });
+    const token = jwt.sign({ userID: user._id }, process.env.SECRET , { expiresIn: "1h" });
     console.log(userName)
     res.cookie("access_token", token, { httpOnly: true, secure: false });
     res.json({ token, userID: user._id });
