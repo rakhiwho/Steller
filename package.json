@@ -6,13 +6,43 @@
   "scripts": {
     "server": "nodemon backend/src/index.js",
     "start": "node backend/src/index.js",
-        "dev": "nodemon backend/src/index.js",
-    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+    "dev": "nodemon backend/src/index.js",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "nodemon": "^3.1.7"
-  }
+  "dependencies":{
+      "dotenv": "^16.4.5",
+      "nodemon": "^3.1.7",
+      "@emoji-mart/react": "^1.1.1",
+      "axios": "^1.7.2",
+      "emoji-mart": "^5.6.0",
+      "react": "^18.2.0",
+      "react-cookie": "^7.1.4",
+      "react-dom": "^18.2.0",
+      "react-icons": "^5.2.1",
+      "react-router-dom": "^6.24.1",
+      "react-swipeable": "^7.0.1",
+      "socket.io": "^4.7.5",
+      "socket.io-client": "^4.7.5",
+      "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.12.10",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.2.0",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.3.1"
+  },
+  "homepage": "https://github.com/rakhiwho/media"
 }

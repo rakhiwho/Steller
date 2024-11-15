@@ -1,0 +1,39 @@
+.sideBar{
+    margin-top: 8vh;
+    
+}
+
+.home{
+    
+    z-index: 99;
+    position: fixed;
+  
+}
+
+.home-chat{
+
+    
+    height: 92vh;
+}
+.message{
+    padding-left: 1rem;
+}
+.message-header{
+padding-top: 0.5rem;
+
+}
+.home-people{
+    margin-top: 12vh;
+    width: 10vw;
+    transition: width 0.5s ease-in-out;
+    z-index: 90;
+    --size :1vw;
+    height: 88vh;
+  
+}
+
+.home-people:hover{
+    width: 30vw;
+    --size: 10vw;
+}
+

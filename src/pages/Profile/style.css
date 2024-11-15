@@ -1,0 +1,158 @@
+
+
+.profile{
+    margin-top: 7.7vh;
+    border: 2px solid #9e7dc6;
+    border-radius: 5px;
+    
+    padding: 2vh;
+    background: #ebeaee;
+    color:  rgb(243, 233, 233);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    border-radius: 25px;
+    padding-left: 2rem;
+   
+}
+input:focus{
+    outline: none;
+    border: none;
+   
+}
+
+.profile-info{
+ display: flex;
+ flex-direction: column;
+ height: fit-content;
+ justify-content: initial;
+ background: #f5f5f5;
+color: black;
+border-radius: 15px;
+padding: 2vh;
+}
+.info{
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.info-details{
+    display: flex;
+    flex-direction:column;
+    justify-content: initial;
+    
+}
+
+.userName{
+font-size: 3vh;
+}
+.gen{
+    margin-right: 3rem;
+    font-size: 2vh;
+    font-weight: 400;
+}
+
+.pfp{
+    height: 14vh;
+    border-radius: 100%;
+    margin-bottom: 1vh;
+}
+.pfp p{
+    margin-left: 0.3rem ;
+
+}
+
+.pfp img{
+    height : 14vh;
+    border-radius: 100%;
+}
+
+ 
+.edit-btn button{
+    background: rgba(186, 181, 251, 0.8);
+    color: #3d16ff;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    height: 45px ;
+    border-radius: 10px;
+    margin-right: 1rem;
+    transition: background color border-color 1s ease-in-out;
+}
+
+
+.edit-btn button:hover{
+   background: white;
+   color: #3b2fc4;
+ 
+   border-color: #3b2fc4;
+}
+
+.profile-about{
+    background-color: white;
+    color: black;
+    border-radius: 13px;
+    padding: 1vh;
+
+
+}
+
+ .profile h3{
+    color: #26243a;
+    margin-top: 2vh;
+    font-weight: 550;
+    
+    font-size: 2.5vh ;
+    text-transform: uppercase;
+}
+
+.update-pfp{
+    height: 100px;
+ margin-top: 1rem;
+  padding: 10px;
+  content-visibility: none;
+
+    color: white;
+
+   
+}
+.visible{
+    filter: blur(20px);
+}
+
+.PopUP_for_story{
+    position: fixed;
+    z-index: 0;
+    left:50;
+    top: 40;
+    right: 40;
+    bottom: 50;
+}
+
+
+.div1{
+    animation: myAnimation 0.2s ease-in-out ;
+}
+
+@keyframes myAnimation {
+    0% {
+      right :-29vw;
+    }
+    25% {
+        right :-21vw;
+      }
+    50% {
+        right :-15vw;
+    }
+    75% {
+        right :-7vw;
+    }
+    100% {
+        right :0;
+    }
+  }
+
+  .gradient{
+    background:  radial-gradient(circle 500px at 44% 50%,  #1f1675, hsl(242, 71%, 11%), #262553);
+  }
