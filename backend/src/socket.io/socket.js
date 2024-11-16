@@ -11,7 +11,7 @@ const server = https.createServer(app);
 
 const io = new Server(server , {
  cors: { 
-  origin: "https://media-bice.vercel.app", 
+  origin: "https://steller-mkwi.onrender.com", 
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
       credentials: true, } } );
 
