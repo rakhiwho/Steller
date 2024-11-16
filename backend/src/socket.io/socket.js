@@ -1,5 +1,5 @@
 import { Server } from "socket.io";
-import https from "https";
+import http from "http";
 import express from "express";
 import mongoose from "mongoose";
 import multer from "multer";
@@ -7,7 +7,7 @@ import { ChildProcess } from "child_process";
 
 const app = express();
 
-const server = https.createServer(app);
+const server = http.createServer(app);
 
 const io = new Server(server , {
  cors: { 
