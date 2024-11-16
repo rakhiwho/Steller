@@ -53,7 +53,7 @@ function Login() {
 
   return (
     <>
-      <div className="bg-indigo-200 text-black-400 w-screen/2p h-screen/2 mx-10 my-32">
+      <div className=" dark:bg-indigo-950 dark:text-black bg-indigo-200 text-black-400 w-screen/2p h-screen/2 mx-10 my-32">
         <h1 className="text-2xl self-center py-5 px-3">LOGIN HERE :</h1>
         <form className="flex flex-col mx-12" onSubmit={login} id="login">
           <div className="bg-indigo-600/50 h-12 w-90 px-12 py-5">
@@ -62,13 +62,13 @@ function Login() {
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              className="cursor-pointer rounded-lg pl-2"
+              className="cursor-pointer rounded-lg pl-2 dark:bg-white"
               id="userName"
               name="userName"
               placeholder="username"
             />
           </div>
-          <div className="bg-indigo-600/50 h-12 w-90 px-12 py-12">
+          <div className="bg-indigo-600/50 h-12 w-90 px-12 py-12 dark:bg-white">
      
             <input
               type="password"
@@ -86,14 +86,14 @@ function Login() {
             value="SUBMIT"
           />
         </form>
-        <div className="cursor-pointer self-center flex items-center flex-col">
+        <div className="cursor-pointer self-center flex items-center flex-col dark:text-white">
           {error && <p className="text-red-600 size-xl">{error}</p>}
           {message && <p className="text-green-600 size-xl">{message}</p>}
           <p className="w-70 inline flex justify-between">
             <>don't have an account? Click </>{" "}
             <GoArrowRight className="my-1.5" />
           </p>
-          <span className="cursor-pointer" onClick={() => setRegistered(false)}>
+          <span className=" dark:text-white cursor-pointer" onClick={() => setRegistered(false)}>
             Register
           </span>
         </div>

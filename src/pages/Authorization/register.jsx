@@ -48,7 +48,7 @@ function Register() {
   }
   return (
     <>
-      <div className="bg-indigo-200 w-70% text-black-400 h-screen/2 mx-12 my-36">
+      <div className="dark:bg-indigo-950 dark:text-black bg-indigo-200 w-70% text-black-400 h-screen/2 mx-12 my-36">
         <h1 className="text-2xl self-center py-5 px-3">REGISTER HERE :</h1>
 
         <form className="flex flex-col mx-12" onSubmit={register}>
@@ -58,7 +58,7 @@ function Register() {
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              className="rounded-lg pl-2"
+              className="rounded-lg pl-2 dark:bg-white"
               id="userName"
               name="userName"
               placeholder="userName"
@@ -73,26 +73,26 @@ function Register() {
               placeholder="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="cursor-pointer  ring-offset-0 rounded-lg pl-2"
+              className="cursor-pointer  ring-offset-0 rounded-lg pl-2 dark:bg-white"
               id="password"
               name="password"
             />
           </div>
 
           <input
-            className="cursor-pointer self-center bg-indigo-950 w-24 text-slate-100 h-12 my-2 rounded-lg"
+            className="cursor-pointer self-center  bg-indigo-950 w-24 text-slate-100 h-12 my-2 rounded-lg"
             type="submit"
             value="SUBMIT"
           />
         </form>
-        <div className="self-center flex items-center flex-col">
+        <div className="dark:text-black self-center flex items-center flex-col">
           {error && <p className="text-red-600 size-xl">{error}</p>}
           {message && <p className="text-green-600 size-xl">{message}</p>}
-          <p className="w-56 inline flex justify-between">
+          <p className="w-56 dark:text-black inline flex justify-between">
             {" "}
             Done signing in click <GoArrowRight className="my-1.5" />{" "}
             <span
-              className="cursor-pointer"
+              className=" dark:text-black cursor-pointer"
               onClick={() => setRegistered(true)}
             >
               Login
