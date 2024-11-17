@@ -38,7 +38,7 @@ export const NavBar = () => {
       navigate("/login");
     }
   };
-  console.log(window.location.pathname == "/login");
+ 
       
     if( window.location.pathname != "/login" && cookies.access_token ==  null ){
       localStorage.clear();
