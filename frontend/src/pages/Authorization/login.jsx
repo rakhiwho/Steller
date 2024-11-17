@@ -59,7 +59,7 @@ function Login() {
 
   return (
     <>
-      <div className="dark:bg-white dark:text-black bg-indigo-200 fixed z-100 top lg:left-[38%] md:left-[25%] sm:left-[20%] left-[13%] text-black-400 w-[23rem]  h-screen/2 mx-10 my-32">
+      <div className="dark:bg-indigo-200 dark:text-black bg-indigo-200 fixed z-100 top lg:left-[38%] md:left-[25%] sm:left-[20%] left-[13%] text-black-400 w-[23rem]  h-screen/2 mx-10 my-32">
         <h1 className="text-2xl self-center py-5 px-3">LOGIN HERE :</h1>
         <form className="flex flex-col mx-12" onSubmit={login} id="login">
           <div className="bg-indigo-600/50 h-12 w-90 px-12 py-5">
