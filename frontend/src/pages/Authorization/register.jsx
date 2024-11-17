@@ -52,11 +52,11 @@ function Register() {
   return (
     <>{ 
    cookies.access_token?.value ==null &&
-      <div className="dark:bg-white dark:text-black bg-indigo-200 fixed z-100 top lg:left-[30%] md:left-[17%]   w-[23rem] text-black-400 h-screen/2 mx-12 my-36">
+      <div className="bg-indigo-400 dark:text-black bg-indigo-200 fixed z-100 top lg:left-[30%] md:left-[17%]   w-[23rem] text-black-400 h-screen/2 mx-12 my-36">
         <h1 className=" dark:text-black text-2xl self-center py-5 px-3">REGISTER HERE :</h1>
 
         <form className="flex flex-col mx-12" onSubmit={register}>
-          <div className=" dark:bg-indigo-950 dark:text-black bg-indigo-600/50 h-12 w-90 px-12 py-5">
+          <div className="dark:text-black bg-indigo-600/50 h-12 w-90 px-12 py-5">
      
             <input
               type="text"
