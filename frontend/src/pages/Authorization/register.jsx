@@ -52,17 +52,26 @@ function Register() {
   return (
     <>{ 
    cookies.access_token?.value ==null &&
+<<<<<<< HEAD
       <div className=" dark:bg-indigo-950 dark:text-black bg-indigo-200 fixed z-100 top lg:left-[30%] md:left-[17%]   w-[23rem] text-black-400 h-screen/2 mx-12 my-36">
         <h1 className="text-2xl self-center py-5 px-3">REGISTER HERE :</h1>
+=======
+      <div className="bg-indigo-400 dark:text-black bg-indigo-200 fixed z-100 top lg:left-[30%] md:left-[17%]   w-[23rem] text-black-400 h-screen/2 mx-12 my-36">
+        <h1 className=" dark:text-black text-2xl self-center py-5 px-3">REGISTER HERE :</h1>
+>>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
 
         <form className="flex flex-col mx-12" onSubmit={register}>
-          <div className="bg-indigo-600/50 h-12 w-90 px-12 py-5">
+          <div className="dark:text-black bg-indigo-600/50 h-12 w-90 px-12 py-5">
      
             <input
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+<<<<<<< HEAD
               className="rounded-lg pl-2 dark:bg-indigo-950 dark:text-black"
+=======
+              className="rounded-lg pl-2 dark:bg-white dark:text-black"
+>>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
               id="userName"
               name="userName"
               placeholder="userName"
@@ -77,7 +86,11 @@ function Register() {
               placeholder="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+<<<<<<< HEAD
               className="cursor-pointer dark:bg-indigo-950 dark:text-black ring-offset-0 rounded-lg pl-2"
+=======
+              className="cursor-pointer  ring-offset-0 rounded-lg pl-2 dark:bg-white dark:text-black"
+>>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
               id="password"
               name="password"
             />
@@ -92,7 +105,11 @@ function Register() {
         <div className="dark:bg-indigo-950 dark:text-black self-center flex items-center flex-col">
           {error && <p className="text-red-600 size-xl">{error}</p>}
           {message && <p className="text-green-600 size-xl">{message}</p>}
+<<<<<<< HEAD
           <p className="w-56 inline flex justify-between dark:bg-indigo-950 dark:text-black">
+=======
+          <p className="w-56 inline flex justify-between  dark:text-black">
+>>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
             {" "}
             Done signing in click <GoArrowRight className="my-1.5 dark:bg-indigo-950 dark:text-black" />{" "}
             <span

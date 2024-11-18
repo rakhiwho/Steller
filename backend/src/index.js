@@ -1,4 +1,4 @@
-import cors from 'cors'
+ 
 import  express from 'express'
 import mongoose from 'mongoose'
  import process from 'process'
@@ -24,14 +24,21 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser())
 
-console.log("MongoDB URL:", process.env.MONGO_DB_URL);
+ 
 
-mongoose.connect("mongodb+srv://rakhydubey4:pokie888@chatapp.n25eckq.mongodb.net/chatApp")
+mongoose.connect(process.env.MONGO_DB_URL )
 .then(() => console.log('Connected to MongoDB successfully'))
 .catch((err) => console.error('Error connecting to MongoDB:', err));
 
 app.use('/user' , authRouter);
+<<<<<<< HEAD
 // app.get("*" , (req, res)=>{
 //   res.sendFile(path.join(__dirname  ,"frontend" , "dist" , "index.html"))
 // })
 server.listen(3001 , ()=> console.log("server Start! "));
+=======
+app.get("*" , (req, res)=>{
+  res.sendFile(path.join(__dirname  ,"frontend" , "dist" , "index.html"))
+})
+ server.listen(3001 , ()=> console.log("server Start! "));
+>>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6

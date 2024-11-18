@@ -40,8 +40,12 @@ export const NavBar = () => {
       navigate("/login");
     // }
   };
+<<<<<<< HEAD
   
   console.log(cookies.access_token);
+=======
+ 
+>>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
       
     if( window.location.pathname != "/login" && cookies.access_token ==  null ){
       localStorage.clear();
