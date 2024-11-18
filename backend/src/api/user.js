@@ -1,6 +1,6 @@
 import express from "express";
 import { delete_convo, getFunction, sendFunction } from "../Controllers/message.js";
-import { change_user_privacy, get_loggedIn_User, login , register} from "../Controllers/user.js";
+import { change_user_privacy, get_loggedIn_User,logout, login , register} from "../Controllers/user.js";
 import { verifyToken } from "../Controllers/authorization.js";
 import { getusers } from "../Controllers/user.js";
 import  {upload, uploadPost} from '../utility/multer.js'
