@@ -23,7 +23,7 @@ router.get('/get/:id', verifyToken , getFunction)
 router.get('/userProfile' , verifyToken , get_loggedIn_User);
 router.get('/getUsers', verifyToken , friends )
 router.get('/userInfo/:id', verifyToken , userInfo )
-
+router.post('/logout' , verifyToken , logout);
 // updating 
 router.put('/editProfile' , verifyToken , upload.single('profilePic') , editInfo )
 router.put('/add-story' , verifyToken , Uplaod_Story);
