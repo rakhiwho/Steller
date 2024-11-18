@@ -11,9 +11,7 @@ import CallOutGoing from "../extras/callComponents/callOutGoing.jsx";
 import { UseSocketContext } from "../../hooks/socketContext.jsx";
 import useVideoChat from "../../hooks/callsystem.js";
 import VoiceCallPage from "../extras/callComponents/CallingPage.jsx";
- 
-import UserInfo from "../../hooks/UserInfo.js";
-
+ import useGetUser_info from "../../hooks/useGetUser_info.js";
 export const NavBar = () => {
   const navigate = useNavigate();
   const [cookies, setCookies, removeCookies] = useCookies(["access_token"]);
