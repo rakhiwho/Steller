@@ -103,3 +103,9 @@ export const change_user_privacy = async (req, res) => {
     return res.status(500).json("internal server error");
   }
 };
+
+export const logout = (req , res)=>{
+ 
+  res.clearCookie("access_token", { path: "/", httpOnly: true });
+  res.status(200).json({ message: "Cookies removed and user logged out." });
+}

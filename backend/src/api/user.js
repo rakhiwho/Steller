@@ -1,6 +1,6 @@
 import express from "express";
 import { delete_convo, getFunction, sendFunction } from "../Controllers/message.js";
-import { change_user_privacy, get_loggedIn_User, login , register} from "../Controllers/user.js";
+import { change_user_privacy, get_loggedIn_User, login , logout, register} from "../Controllers/user.js";
 import { verifyToken } from "../Controllers/authorization.js";
 import { getusers } from "../Controllers/user.js";
 import  {upload, uploadPost} from '../utility/multer.js'
@@ -23,7 +23,7 @@ router.get('/get/:id', verifyToken , getFunction)
 router.get('/userProfile' , verifyToken , get_loggedIn_User);
 router.get('/getUsers', verifyToken , friends )
 router.get('/userInfo/:id', verifyToken , userInfo )
-
+router.post('/logout' , verifyToken , logout);
 // updating 
 router.put('/editProfile' , verifyToken , upload.single('profilePic') , editInfo )
 router.put('/add-story' , verifyToken , Uplaod_Story);
