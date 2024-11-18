@@ -13,6 +13,8 @@ import VoiceCallPage from "../extras/callComponents/CallingPage.jsx";
  
 
 export const NavBar = () => {
+  const {data } = useGetUser_info();
+  console.log(data);
   const navigate = useNavigate();
   const [, setCookies] = useCookies(["access_token"]);
   const { logedIn , isCalling , setIsCalling , isvoiceCalling} = useContext(context);

@@ -13,32 +13,35 @@ import useVideoChat from "../../hooks/callsystem.js";
 import VoiceCallPage from "../extras/callComponents/CallingPage.jsx";
  
 import UserInfo from "../../hooks/UserInfo.js";
+import useGetUser_info from "../../hooks/useGetUser_info.js";
+import axios from "axios";
 
 export const NavBar = () => {
   const navigate = useNavigate();
-  const [cookies, setCookies, removeCookies] = useCookies(["access_token"]);
-  const { logedIn, isCalling, setIsCalling, isvoiceCalling } =
+  const [cookies, setCookies] = useCookies(["access_token"]);
+  const {  isvoiceCalling } =
     useContext(context);
-  const { socket } = UseSocketContext();
-  const { data, loading } = UserInfo(localStorage.getItem("userID"));
+ 
+
+  const { data, loading } = useGetUser_info();
   const {
-    endCall,
-    acceptCall,
-    initiateCall,
+  
     isCalling: calling,
   } = useVideoChat(
     localStorage.getItem("userID"),
     localStorage.getItem("selectedUser")
   );
-  const logOut = () => {
-    let res = prompt("Are you sure you want to log out? (type yes/no)");
-    if (res && res.toLowerCase().startsWith("y")) {
+  const logOut = async () => {
+    // let res = prompt("Are you sure you want to log out? (type yes/no)");
+    // if (res && res.toLowerCase().startsWith("y")) {
       localStorage.clear();
-      removeCookies("access_token");
+      const res =  await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/logout`, {} ,  { withCredentials: true });
+      console.log(res);
       navigate("/login");
-    }
+    // }
   };
-  console.log(window.location.pathname == "/login");
+  
+  console.log(cookies.access_token);
       
     if( window.location.pathname != "/login" && cookies.access_token ==  null ){
       localStorage.clear();
@@ -49,10 +52,10 @@ export const NavBar = () => {
   
      }
  
-  
+ 
   return (
     <>
-      <div className="navbar  h-fit mb-0">
+      <div  className="navbar  h-fit mb-0">
         <div>
           <CallOutGoing />
         </div>
@@ -74,7 +77,7 @@ export const NavBar = () => {
           </h1>
         </div>
 
-        <div>{!loading && data?.userName == undefined && <Auth />}</div>
+        
       </div>
     </>
   );

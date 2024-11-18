@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.centered-div {
+    width: 80%; /* Adjust width as needed */
+    max-width: 400px; /* Optional maximum width */
+    margin: 0 auto; /* Centers horizontally */
+    padding: 20px; /* Add padding if needed */
+    background-color: lightgrey; /* Optional background color */
+    text-align: center; /* Centers text content */
+    border-radius: 8px; /* Optional rounded corners */
+  }
+  
+  @media (max-width: 768px) {
+    .centered-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centers the div */
+    }
+  }
+  

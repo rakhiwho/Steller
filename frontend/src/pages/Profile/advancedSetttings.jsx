@@ -6,10 +6,12 @@ import "./style.css";
 import axios from "axios";
 import { UseGetToken } from "../../hooks/useGetToken";
 function AdvancedSetttings({ privacy }) {
-  const [privacysetting,  setPrivacysetting] = useState(false);
-  const { setChange, setAdvanced, darkTheme , setDarkTheme} = useContext(context);
+  
+  const [privacysetting, setPrivacysetting] = useState(false);
+  const { setChange, setAdvanced, darkTheme, setDarkTheme } = useContext(context);
   const [valPrivacy, setValPrivacy] = useState(privacy);
   const { headers } = UseGetToken();
+
   const handleprivacy = async (privacy) => {
     const res = await axios.put(
       "http://localhost:3001/user/privacy",
@@ -20,7 +22,6 @@ function AdvancedSetttings({ privacy }) {
       }
     );
     if (res.data) {
-      console.log(res.data);
       setValPrivacy(privacy);
       setAdvanced(false);
     }
@@ -28,17 +29,16 @@ function AdvancedSetttings({ privacy }) {
   };
   const togglePrivacySetting = () => {
     setPrivacysetting(!privacysetting);
-    console.log("Privacy setting toggled:", !privacysetting); // Debug log
   };
-  console.log(localStorage.getItem('dark')!=null)
-  useEffect(()=>{
-    if(!darkTheme){
-      localStorage.setItem('dark', 'true')
-    }else{
-      localStorage.removeItem('dark')
+
+  useEffect(() => {
+    if (!darkTheme) {
+      localStorage.setItem("dark", "true");
+    } else {
+      localStorage.removeItem("dark");
     }
-  }, [darkTheme])
-  
+  }, [darkTheme]);
+
   return (
     <div
       className={`  ${
@@ -54,11 +54,7 @@ function AdvancedSetttings({ privacy }) {
       </li>
       <div className="divider m-0 my-1 "></div>
 
-      <li
-        className="list-none h-fit w-fit "
-        onClick={togglePrivacySetting}
-      >
-
+      <li className="list-none h-fit w-fit " onClick={togglePrivacySetting}>
         {" "}
         <div>
           privacy
@@ -101,7 +97,9 @@ function AdvancedSetttings({ privacy }) {
         </div>
       </li>
       <div className="divider m-0 my-1 w-fit "></div>
-      <li className="list-none inline" onClick={()=>setDarkTheme(!darkTheme)}>darkTheme {!darkTheme && <HiCheckCircle className="inline" />}</li>
+      <li className="list-none inline" onClick={() => setDarkTheme(!darkTheme)}>
+        darkTheme {!darkTheme && <HiCheckCircle className="inline" />}
+      </li>
       <div className="divider m-0  my-1"></div>
     </div>
   );

@@ -39,7 +39,7 @@ function Index() {
     navigate("/");
     localStorage.clear();
     setCookies("access_token", null);
-    console.log("deleted user success fully");
+   
   };
    
   return (

@@ -7,6 +7,7 @@ import { UserError } from "../../hooks/Errors.js";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../NavBar/index.jsx";
+import useGetUser_info from "../../hooks/useGetUser_info.js";
 
 function Login() {
   const { setRegistered, setLogedIn, logedIn, setUser } = useContext(context);
@@ -16,8 +17,9 @@ function Login() {
   const [message, setMessage] = useState(" ");
   const [cookies, setCookies] = useCookies(["access_token"]);
   const navigate = useNavigate();
+ const {data , loading} = useGetUser_info();
 
-  if(cookies.access_token?.value !=null ){
+  if(!loading && data?._id != undefined ){
     navigate("/");
    }
 

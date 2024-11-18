@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useCookies  } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+import UserInfo from './UserInfo';
+import useGetUser_info from './useGetUser_info';
 const defaultVal = {
   registered: false,
   setRegistered: () => null,
@@ -38,6 +40,9 @@ const context = createContext(defaultVal);
 
 export const ContextProvider = ({ children }) => {
   const navigate = useNavigate();
+  const {data } = useGetUser_info();
+   
+
   const [visibleStory , setVisibleStory]=useState(false);
   const [cookies ] = useCookies(['access_token']);
   const [registered, setRegistered] = useState(false);
@@ -53,6 +58,11 @@ export const ContextProvider = ({ children }) => {
   const [isCalling , setIsCalling] = useState(false);
   const [isvoiceCalling , setIsvoiceCalling] = useState(false);
   const [darkTheme , setDarkTheme] = useState(!(localStorage.getItem('dark') !=null));
+  console.log(localStorage.getItem("userID"))
+  if(cookies.access_token ){
+    localStorage.setItem("userID" , data._id );
+
+  }
   useEffect(()=>{
     setAdvanced(false);
     setVisibleStory(false)
