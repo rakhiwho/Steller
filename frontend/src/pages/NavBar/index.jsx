@@ -20,7 +20,7 @@ export const NavBar = () => {
   const { logedIn, isCalling, setIsCalling, isvoiceCalling } =
     useContext(context);
   const { socket } = UseSocketContext();
-  const { data, loading } = UserInfo(localStorage.getItem("userID"));
+  const { data, loading } = useGetUser_info();
   const {
     endCall,
     acceptCall,
@@ -30,11 +30,12 @@ export const NavBar = () => {
     localStorage.getItem("userID"),
     localStorage.getItem("selectedUser")
   );
-  const logOut = () => {
+   const logOut = async () => {
     let res = prompt("Are you sure you want to log out? (type yes/no)");
     if (res && res.toLowerCase().startsWith("y")) {
       localStorage.clear();
-      removeCookies("access_token");
+      const res =  await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/logout`, {} ,{ withCredentials: true });
+      console.log(res);
       navigate("/login");
     }
   };
@@ -74,7 +75,7 @@ export const NavBar = () => {
           </h1>
         </div>
 
-        <div>{!loading && data?.userName == undefined && <Auth />}</div>
+        
       </div>
     </>
   );
