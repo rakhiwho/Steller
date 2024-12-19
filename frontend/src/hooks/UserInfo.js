@@ -11,7 +11,7 @@ function UserInfo(id) {
   const { socket } = UseSocketContext();
   const [loading, setLoading] = useState(true);
  const {cookies  , } = useCookies(['access_token']);
- 
+  
   const getUserInfo = async () => {
     try {
       const res =   await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/userInfo/${id}`, {

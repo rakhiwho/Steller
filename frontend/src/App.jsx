@@ -33,11 +33,8 @@ function App() {
   const {data , loading } = UserInfo(localStorage.getItem('lastChackedUser'))
   const {data : user , loading : userLoading} = UserInfo(localStorage.getItem('search_user'));
     
-<<<<<<< HEAD
   
-=======
  
->>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
     return (
       <>
      <Router>
