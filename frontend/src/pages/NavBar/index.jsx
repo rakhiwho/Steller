@@ -32,20 +32,16 @@ export const NavBar = () => {
     localStorage.getItem("selectedUser")
   );
   const logOut = async () => {
-    // let res = prompt("Are you sure you want to log out? (type yes/no)");
-    // if (res && res.toLowerCase().startsWith("y")) {
+    let res = prompt("Are you sure you want to log out? (type yes/no)");
+    if (res && res.toLowerCase().startsWith("y")) {
       localStorage.clear();
-      const res =  await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/logout`, {} ,  { withCredentials: true });
+      const res =  await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/logout`, {} ,{ withCredentials: true });
       console.log(res);
       navigate("/login");
-    // }
+    }
   };
-<<<<<<< HEAD
   
   console.log(cookies.access_token);
-=======
- 
->>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
       
     if( window.location.pathname != "/login" && cookies.access_token ==  null ){
       localStorage.clear();

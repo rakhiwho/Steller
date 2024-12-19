@@ -42,7 +42,7 @@ function CommentSection({ id }) {
         <div className={`${!darkTheme ? "bg-indigo-900" : ""} comment-input`}>
           <input
             value={content}
-            className={`${!darkTheme ? "bg-indigo-950" : ""}  text-slate-300 `}
+            className={`${!darkTheme ? "bg-indigo-950 text-slate-200" : " text-black"} font-medium  `}
             onChange={(e) => setContent(e.target.value)}
             type="text"
             name=""

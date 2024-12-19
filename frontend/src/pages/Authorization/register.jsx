@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { GoArrowRight } from "react-icons/go";
- 
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 import axios from "axios";
 import { context } from "../../hooks/Context.jsx";
 import { UserError } from "../../hooks/Errors.js";
@@ -8,6 +9,7 @@ import { Cookies, useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
  
 function Register() {
+    const [passwordVisibility , setPasswordVisiility ] = useState(false);
   const {   logedIn } = useContext(context);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -43,35 +45,26 @@ function Register() {
       } else {
         setError(" ");
         setError("something went wrong!");
-        alert(error);
+      
       }
     }
   };
 
   
   return (
-    <>{ 
+    <div className="flex h-screen items-center  flex-col justify-center">{ 
    cookies.access_token?.value ==null &&
-<<<<<<< HEAD
-      <div className=" dark:bg-indigo-950 dark:text-black bg-indigo-200 fixed z-100 top lg:left-[30%] md:left-[17%]   w-[23rem] text-black-400 h-screen/2 mx-12 my-36">
+      <div className=" dark:bg-indigo-950 dark:text-black bg-indigo-200 fixed z-100  align-middle h-fit   text-black-400  ">
         <h1 className="text-2xl self-center py-5 px-3">REGISTER HERE :</h1>
-=======
-      <div className="bg-indigo-400 dark:text-black bg-indigo-200 fixed z-100 top lg:left-[30%] md:left-[17%]   w-[23rem] text-black-400 h-screen/2 mx-12 my-36">
-        <h1 className=" dark:text-black text-2xl self-center py-5 px-3">REGISTER HERE :</h1>
->>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
 
         <form className="flex flex-col mx-12" onSubmit={register}>
-          <div className="dark:text-black bg-indigo-600/50 h-12 w-90 px-12 py-5">
+          <div className="bg-indigo-600/50 h-12 w-90 px-12 py-5">
      
             <input
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-<<<<<<< HEAD
               className="rounded-lg pl-2 dark:bg-indigo-950 dark:text-black"
-=======
-              className="rounded-lg pl-2 dark:bg-white dark:text-black"
->>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
               id="userName"
               name="userName"
               placeholder="userName"
@@ -79,37 +72,28 @@ function Register() {
             />
           </div>
 
-          <div className="bg-indigo-600/50 h-10 w-90 px-12 py-12">
-             
-            <input
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-<<<<<<< HEAD
-              className="cursor-pointer dark:bg-indigo-950 dark:text-black ring-offset-0 rounded-lg pl-2"
-=======
-              className="cursor-pointer  ring-offset-0 rounded-lg pl-2 dark:bg-white dark:text-black"
->>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
-              id="password"
-              name="password"
-            />
-          </div>
-
+         <div className="bg-indigo-600/50 h-12 w-fit px-12 py-12 relative  ">
+                    <input
+                      type={`${passwordVisibility ? 'text' : "password"}`}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="dark:bg-white dark:text-black cursor-pointer  ring-offset-0 rounded-lg pl-2"
+                      id="password"
+                      name="password"
+                      placeholder="password"
+                      />
+                  { !passwordVisibility? <IoIosEyeOff onClick={()=>setPasswordVisiility(!passwordVisibility)} className="bg-white  absolute top-[50%] right-[16%] size-6 text-slate-600 rounded-lg "  /> : <IoIosEye onClick={()=>setPasswordVisiility(!passwordVisibility)} className="bg-white  absolute top-[50%] right-[16%] size-6 text-slate-600 rounded-lg " />}
+                  </div>
           <input
             className=" dark:bg-indigo-950 dark:text-black cursor-pointer self-center bg-indigo-950 w-24 text-slate-100 h-12 my-2 rounded-lg"
             type="submit"
             value="SUBMIT"
           />
         </form>
-        <div className="dark:bg-indigo-950 dark:text-black self-center flex items-center flex-col">
+        <div className="dark:bg-indigo-400 dark:text-black self-center flex items-center flex-col">
           {error && <p className="text-red-600 size-xl">{error}</p>}
           {message && <p className="text-green-600 size-xl">{message}</p>}
-<<<<<<< HEAD
           <p className="w-56 inline flex justify-between dark:bg-indigo-950 dark:text-black">
-=======
-          <p className="w-56 inline flex justify-between  dark:text-black">
->>>>>>> 48194c4e153401851b2fa462b9f9d21187b2c2b6
             {" "}
             Done signing in click <GoArrowRight className="my-1.5 dark:bg-indigo-950 dark:text-black" />{" "}
             <span
@@ -121,7 +105,7 @@ function Register() {
           </p>
         </div>
       </div> }
-    </>
+    </div>
   );
 }
 
