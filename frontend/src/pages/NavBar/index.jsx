@@ -41,17 +41,17 @@ export const NavBar = () => {
     }
   };
   
-  console.log(cookies.access_token);
+ 
       
     if( window.location.pathname != "/login" && cookies.access_token ==  null ){
       localStorage.clear();
       if( window.location.pathname != "/register") {
         window.location.assign("/login") 
       }
-  
-  
-     }
- 
+    }
+   if(cookies.access_token ==  null){
+    window.location.assign("/login") 
+   }
  
   return (
     <>
