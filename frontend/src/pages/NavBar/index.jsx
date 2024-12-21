@@ -50,6 +50,9 @@ export const NavBar = () => {
       }
     }
    if(cookies.access_token ==  null){
+    if(window.location.pathname != "/login"){
+      return;
+    }
     window.location.assign("/login") 
    }
  
