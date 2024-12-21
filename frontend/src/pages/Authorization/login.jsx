@@ -20,10 +20,7 @@ function Login() {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const navigate = useNavigate();
   const { data, loading } = useGetUser_info();
-
-  if (!loading && data?._id != undefined) {
-    navigate("/");
-  }
+ 
 
   const login = async (e) => {
     e.preventDefault();
