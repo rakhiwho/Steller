@@ -39,7 +39,7 @@ function UseGetPost(id) {
             
             try {
                
-               const res = await axios.get('http://localhost:3001/user/getFollowingsPost' , { headers , withCredentials: true})
+               const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/getFollowingsPost` , { headers , withCredentials: true})
                
                if(!res.data){
                   console.log("something went wrong");

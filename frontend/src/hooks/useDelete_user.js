@@ -29,7 +29,7 @@ const delete_user = async()=>{
 const delete_Story =  async()=>{
     
     try {
-    const res = await  axios.delete(`http://localhost:3001/user/delete_Story/${userID}` , {headers , withCredentials :true});
+    const res = await  axios.delete(`${import.meta.env.VITE_BACKEND_URL}/user/delete_Story/${userID}` , {headers , withCredentials :true});
 
    
 
