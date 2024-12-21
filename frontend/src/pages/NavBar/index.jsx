@@ -36,6 +36,10 @@ export const NavBar = () => {
     if (window.location.pathname != "/register") {
       window.location.assign("/login");
     }
+  }else if(window.location.pathname === "/login" && cookies.access_token != null) {
+ 
+      navigate(-1);  
+ 
   }
   
   return (
